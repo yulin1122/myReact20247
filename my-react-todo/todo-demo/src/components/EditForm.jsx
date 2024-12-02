@@ -1,35 +1,25 @@
 import { useState } from "react"
-
-function CreateForm({ addTodo }) {
+function EditForm({ todo, editTodo }) {
     // 建立input內容的變數
-    const [content, setContent] = useState('');
-
-
+    // 預設值為修改中的todo內容
+    const [content, setContent] = useState(todo.content);
 
     const handleSubmit = (e) => {
         // 取消事件預設行為
         e.preventDefault();
-
-        // 增加todo內容
-        addTodo(content);
-
-        // 清除input內容
-        setContent('');
-
+        editTodo(todo.id, content)
     }
     return (
         <form className="create-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="輸入待辦事項"
+            <input type="text"
                 value={content}
                 onChange={(e) => {
                     setContent(e.target.value)
                 }}
             />
-            <button type="submit">加入</button>
-
-
+            <button type="submit">完成</button>
         </form>
     )
 }
 
-export default CreateForm
+export default EditForm
