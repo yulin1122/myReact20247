@@ -8,15 +8,16 @@ import './App.css'
 function App() {
 
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   (async () => {
-  //     const data = await axios.get('./public/weatherIcon');
-  //     const { location } = data.data.cwaopendata.dataset;
-  //     const options = { hour: 'numeric', minute: 'numeric' }
-  //     console.log(location);
-  //   })()
-  // }, [])
+    (async () => {
+      const data = await axios.get('https://yulin1122.github.io/myReact20247/json/F-C0032-001.json');
+      console.log(data);
+      // const { location } = data.data.cwaopendata.dataset;
+      // const options = { hour: 'numeric', minute: 'numeric' }
+      // console.log(location);
+    })()
+  }, [])
 
 
 
